@@ -122,10 +122,10 @@ const New = () => {
                               }}
                               required
                             >
-                              <DatePicker ref={datePickerRef} max={new Date()}>
+                              <DatePicker ref={datePickerRef} max={new Date()} precision="second">
                                 {(value) =>
                                   value
-                                    ? dayjs(value).format("YYYY-MM-DD")
+                                    ? dayjs(value).format("YYYY-MM-DD HH:mm:ss")
                                     : "选择日期"
                                 }
                               </DatePicker>

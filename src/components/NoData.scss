@@ -1,0 +1,14 @@
+.main_wrapper {
+  min-width: 300px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  border-radius: 8px;
+  font-size: large;
+  font-weight: lighter;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #00000052;
+  background: linear-gradient(to right, #e7e7e7, #d0e8ff);
+}

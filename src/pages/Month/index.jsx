@@ -6,6 +6,8 @@ import { useSelector } from "react-redux";
 import { groupBy } from "lodash";
 import DailyBill from "./components/DailyBill";
 import dayjs from "dayjs";
+import NoData from "@/components/NoData";
+
 const Month = () => {
   const [showTimeSelector, setshowTimeSelector] = useState(false);
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
@@ -88,7 +90,9 @@ const Month = () => {
       </div>
       <div>
         {Object.keys(dayGroup).length === 0 ? (
-          <div className="noData">暂无数据</div>
+          <div className="noData">
+            <NoData />
+          </div>
         ) : (
           Object.keys(dayGroup).map((item) => {
             return (
