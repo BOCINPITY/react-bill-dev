@@ -1,0 +1,38 @@
+.monthlyBill {
+  color: #000;
+  font-weight: bold;
+  background-color: #fff;
+  margin: 0 10px;
+  .nav {
+    color: grey;
+  }
+  .content {
+    padding: 1rem;
+    height: 150px;
+    border-radius: 1em;
+
+    display: flex;
+    flex-direction: column;
+    //渐变色背景
+    background: linear-gradient(to right, #ffe079, #f3f2e8);
+    background-image: url("https://cdn.pixabay.com/photo/2023/12/14/06/45/chicken-8448262_1280.jpg");
+    background-size: cover;
+
+    .date {
+      font-size: 16px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      line-height: 30px;
+    }
+    .caculate {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      .money {
+        font-size: 24px;
+      }
+    }
+  }
+}

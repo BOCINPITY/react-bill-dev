@@ -1,0 +1,60 @@
+.dailyBill {
+  display: flex;
+  min-height: 90px;
+  border: 1px solid #e5e5e5;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: normal;
+  .dailyBillTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  .dailyBillContent {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    //选中前两个字符
+    & .dailyBillItem:first-child {
+      color: #cc3434;
+      font-weight: bold;
+    }
+    & .dailyBillItem:nth-child(2) {
+      color: #4caf50;
+      font-weight: bold;
+    }
+    & .dailyBillItem:nth-child(3) {
+      color: #2196f3;
+      font-size: 24px;
+      font-weight: bold;
+      & span {
+        font-size: 14px;
+        font-weight: normal;
+        color: #333;
+      }
+    }
+  }
+  .balanceItem {
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ececec;
+    .name{
+      width: 30%;
+    }
+    .accountDetail {
+      font-size: 16px;
+      color: rgb(255, 153, 0);
+    }
+  }
+}
