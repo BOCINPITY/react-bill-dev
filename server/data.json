@@ -1098,6 +1098,20 @@
       "date": "2025-03-01 01:39:23",
       "type": "pay",
       "useFor": "HomeDecoration"
+    },
+    {
+      "id": "ea57",
+      "money": 18,
+      "date": "2025-03-31 20:34:37",
+      "type": "pay",
+      "useFor": "CateringFood"
+    },
+    {
+      "id": "36fa",
+      "money": 18,
+      "date": "2025-03-31 20:35:30",
+      "type": "income",
+      "useFor": "CarMaintenance"
     }
   ]
 }
