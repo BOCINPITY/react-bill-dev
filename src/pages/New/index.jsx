@@ -14,12 +14,15 @@ import "./index.scss";
 import { billNameMap } from "@/utils/resolveBillName.js";
 import { BillOutline } from "antd-mobile-icons";
 import dayjs from "dayjs";
-import axios from "axios";
+import { addBillList } from "@/store/modules/billSlice";
+import { useDispatch } from "react-redux";
 
 const New = () => {
+  const navigate = useNavigate();
   const datePickerRef = useRef(null);
   const keys = Object.keys(billNameMap);
   const naigate = useNavigate();
+  const dispatch = useDispatch();
   const [billInfo, setBillInfo] = useState({
     money: 0,
     date: "",
@@ -31,27 +34,17 @@ const New = () => {
     try {
       const values = await form.validateFields();
       const { type, date } = values;
-      const updatedBillInfo = {
+      const addBillInfo = {
         ...billInfo,
         useFor,
         type,
         date: dayjs(date).format("YYYY-MM-DD HH:mm:ss"),
       };
-
-      // 发起请求
-      const response = await axios.post(
-        "http://127.0.0.1:3001/bill",
-        updatedBillInfo
-      );
-      if (response.status === 201) {
-        Toast.show({ content: "提交成功" });
-        naigate("/");
-      } else {
-        Toast.show({ content: "提交失败，请稍后再试" });
-      }
+      dispatch(addBillList(addBillInfo));
+      navigate("/");
     } catch (error) {
-      console.error("提交失败:", error);
-      Toast.show({ content: "提交失败，请检查表单" });
+      console.log("Validation failed:", error);
+      return;
     }
   };
 
@@ -122,7 +115,11 @@ const New = () => {
                               }}
                               required
                             >
-                              <DatePicker ref={datePickerRef} max={new Date()} precision="second">
+                              <DatePicker
+                                ref={datePickerRef}
+                                max={new Date()}
+                                precision="second"
+                              >
                                 {(value) =>
                                   value
                                     ? dayjs(value).format("YYYY-MM-DD HH:mm:ss")
@@ -137,7 +134,7 @@ const New = () => {
                       onConfirm: () => {
                         handleSubmit(item); // 将当前的 useFor 传递给 handleSubmit
                       },
-                      onClose: () => console.log("onClose"),
+                      onClose: () => undefined,
                     });
                   }
                 }}

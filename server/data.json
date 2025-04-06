@@ -1112,6 +1112,27 @@
       "date": "2025-03-31 20:35:30",
       "type": "income",
       "useFor": "CarMaintenance"
+    },
+    {
+      "id": "7cb5",
+      "money": 18,
+      "date": "2025-04-06 20:44:19",
+      "type": "pay",
+      "useFor": "CateringFood"
+    },
+    {
+      "id": "47ba",
+      "money": 20,
+      "date": "2025-04-06 20:46:05",
+      "type": "income",
+      "useFor": "MedicalHealth"
+    },
+    {
+      "id": "02f6",
+      "money": 12,
+      "date": "2025-04-06 20:48:45",
+      "type": "pay",
+      "useFor": "DailyGeneralMerchandise"
     }
   ]
 }

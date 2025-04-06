@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-
+const BASE_URL = 'http://127.0.0.1:3001'
 const billSlice = createSlice({
     name: "bill",
     initialState: {
@@ -11,17 +11,29 @@ const billSlice = createSlice({
         setBillList: (state, action) => {
             state.billList = action.payload;
         },
+        //同步新增方法
+        addBill: (state, action) => {
+            state.billList.push(action.payload);
+        },
     }
 })
 //actionCreator
-const { setBillList } = billSlice.actions;
+const { setBillList, addBill } = billSlice.actions;
 
 const getBillList = () => {
     return async (dispatch) => {
-        const res = await axios.get("http://127.0.0.1:3001/bill")
+        const res = await axios.get(`${BASE_URL}/bill`)
         dispatch(setBillList(res.data))
     }
 }
+
+const addBillList = (data) => {
+    return async (dispatch) => {
+        const res = await axios.post(`${BASE_URL}/bill`, data)
+        console.log(res.data, "res.data");
+        dispatch(addBill(res.data))
+    }
+}
 //导出
-export { getBillList }
+export { getBillList, addBillList }
 export default billSlice.reducer;
