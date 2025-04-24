@@ -32,7 +32,7 @@ const New = () => {
   const [form] = Form.useForm();
   const handleSubmit = async (useFor) => {
     try {
-      const values = await form.validateFields();
+      const values = await form.getFieldsValue();
       const { type, date } = values;
       const addBillInfo = {
         ...billInfo,
@@ -43,7 +43,10 @@ const New = () => {
       dispatch(addBillList(addBillInfo));
       navigate("/");
     } catch (error) {
-      console.log("Validation failed:", error);
+      Toast.show({
+        content: "请填写完整信息",
+        duration: 2000,
+      });
       return;
     }
   };
@@ -64,6 +67,7 @@ const New = () => {
                 setBillInfo({ ...billInfo, money: Number(value) });
               }}
               type="number"
+              min={0}
               placeholder={billInfo.money.toFixed(2)}
               clearable
             />

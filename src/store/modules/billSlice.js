@@ -19,18 +19,15 @@ const billSlice = createSlice({
 })
 //actionCreator
 const { setBillList, addBill } = billSlice.actions;
-
 const getBillList = () => {
     return async (dispatch) => {
         const res = await axios.get(`${BASE_URL}/bill`)
         dispatch(setBillList(res.data))
     }
 }
-
 const addBillList = (data) => {
     return async (dispatch) => {
         const res = await axios.post(`${BASE_URL}/bill`, data)
-        console.log(res.data, "res.data");
         dispatch(addBill(res.data))
     }
 }

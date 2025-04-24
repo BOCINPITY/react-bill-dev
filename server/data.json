@@ -1133,6 +1133,13 @@
       "date": "2025-04-06 20:48:45",
       "type": "pay",
       "useFor": "DailyGeneralMerchandise"
+    },
+    {
+      "id": "8bf0",
+      "money": 12,
+      "date": "2025-04-24 22:57:40",
+      "type": "pay",
+      "useFor": "CateringFood"
     }
   ]
 }

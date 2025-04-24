@@ -21,7 +21,6 @@ const Year = () => {
       return acc;
     }, {});
   }, [billList]);
-  console.log(yearGroup);
   // 获取当前年份的账单数据（修改为保持数值类型）
   const { incomeMoney, payMoney, balanceMoney } = useMemo(() => {
     const currentYearList = yearGroup[currentYear] || [];

@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# React Bill Management Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 项目简介
+React Bill 是一个基于 React 的账单管理应用，旨在帮助用户记录和分析日常收支情况。该项目使用了现代化的前端技术栈，包括 React、Redux、ECharts 和 Ant Design Mobile。
 
-## Available Scripts
+## 功能特性
+- **月度账单**：查看每月的收入、支出和结余。
+- **年度账单**：分析年度收支情况，包括分类消费分析。
+- **记账功能**：快速添加收入或支出记录。
+- **数据可视化**：通过 ECharts 提供直观的图表展示。
 
-In the project directory, you can run:
+## 技术栈
+- **前端框架**：React
+- **状态管理**：Redux Toolkit
+- **UI 组件库**：Ant Design Mobile
+- **数据可视化**：ECharts
+- **工具库**：Lodash、Day.js
 
-### `npm start`
+## 项目结构
+```
+react-bill/
+├── public/                # 静态资源
+├── server/                # 模拟后端数据的 JSON Server
+├── src/                   # 源代码
+│   ├── components/        # 通用组件
+│   ├── pages/             # 页面组件
+│   ├── router/            # 路由配置
+│   ├── store/             # Redux 状态管理
+│   ├── utils/             # 工具函数
+│   ├── index.js           # 项目入口文件
+│   ├── theme.css          # 全局主题样式
+│   └── index.css          # 全局基础样式
+├── package.json           # 项目依赖和脚本
+├── craco.config.js        # 配置文件
+└── README.md              # 项目说明
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 快速开始
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 环境建议
+- Node.js >= 20.x
+- npm >= 9.x
 
-### `npm test`
+### 安装依赖
+```bash
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 启动项目
+1. 启动前端开发服务器：
+```bash
+npm start
+```
+2. 启动 JSON Server 模拟后端：
+```bash
+npm run server
+```
 
-### `npm run build`
+### 构建项目
+```bash
+npm run build
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 主要页面
+- **月度账单**：展示每月的账单数据，支持按日期分组。
+- **年度账单**：展示年度收支总览和分类消费分析。
+- **记账页面**：支持选择分类、金额、日期和类型（收入/支出）。
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 数据接口
+- **获取账单列表**：`GET /bill`
+- **新增账单**：`POST /bill`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 开发者
+- **作者**：cles
+- **邮箱**：qin.jian@free-sun.com.cn
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 许可证
+MIT License

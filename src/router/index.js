@@ -8,23 +8,10 @@ export default createBrowserRouter([
         path: "/",
         element: <Layout />,
         children: [
-            {
-                path: "",
-                element: <Month />
-            },
-            {
-                path: "month",
-                element: <Month />
-            },
-            {
-                path: "year",
-                element: <Year />
-            },
-
+            { path: "", element: <Month /> },
+            { path: "month", element: <Month /> },
+            { path: "year", element: <Year /> },
         ]
     },
-    {
-        path: "/new",
-        element: <New />
-    }
+    { path: "/new", element: <New /> }
 ])
